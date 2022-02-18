@@ -1,0 +1,20 @@
+#Для настольной игры используются карточки с номерами от 1 до N.
+# Одна карточка потерялась.
+# Найдите ее, зная номера оставшихся карточек.
+# 
+# Вводится число N,
+# далее еще N − 1 чисел: 
+# номера оставшихся карточек (различные числа от 1 до N).
+# Программа должна вывести номер потерянной карточки.
+
+
+totalCards = int(input('Введите количество карточек: '))
+totalSum = 0
+remainingSum = 0
+for card in range(1, totalCards + 1):
+  totalSum += card
+for card in range(totalCards - 1):
+  remaining_card = int(input('Номер оставшейся карты: '))
+  remainingSum += remaining_card
+  totalSum -= remaining_card 
+print('Номер потерявшейся карты: ', totalSum) 
