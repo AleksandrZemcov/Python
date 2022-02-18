@@ -1,0 +1,15 @@
+# Напишите программу,
+# которая считывает с клавиатуры два числа a и b,
+# считает и выводит на консоль 
+#среднее арифметическое всех чисел из отрезка [a; b], которые кратны числу 3.
+
+
+begin_number = int(input('Введите начальное число: '))
+end_number = int(input('Введите конечное число: '))
+shet = 0
+sum_element = 0
+for numm in range (begin_number, end_number + 1):
+  if numm % 3 == 0:
+    sum_element += numm
+    shet += 1
+print(sum_element / shet )
