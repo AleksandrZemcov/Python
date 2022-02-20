@@ -1,0 +1,33 @@
+# Пример 1 
+# Введите кол-во мальчиков: 5
+# Введите кол-во девочек: 5
+# Ответ: BGBGBGBGBG
+# 
+# Пример 2: 
+# Введите кол-во мальчиков: 5
+# Введите кол-во девочек: 3
+# Ответ: BGBGBBGB
+# 
+# Пример 3:
+# Введите кол-во мальчиков: 100
+# Введите кол-во девочек: 1
+# Ответ: Нет решения
+
+boys = int(input('Введите кол-во мальчиков: '))
+girls = int(input('Введите кол-во девочек: '))
+result = ''
+if (boys > 2 * girls) or (girls > 2 * boys):
+  print('Нет решения')
+elif boys > girls:
+  extra = boys - girls
+  for bgb in range(extra):
+    result += 'BGB'
+  for bg in range(girls - extra):
+    result += 'BG'
+else:
+  extra = girls - boys
+  for gb in range(boys - extra):
+    result += 'GB'
+  for gbg in range(extra):
+    result += 'GBG'
+print(result)
